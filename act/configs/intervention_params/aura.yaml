@@ -1,0 +1,10 @@
+name: aura
+pooling_op: max
+incremental: atonce
+state_path: null
+hook_params:
+  intervention_position: all
+  strength: 1.0
+  device: ${device}
+  dtype: ${dtype:torch.float32}
+  quantiles_src: q_all

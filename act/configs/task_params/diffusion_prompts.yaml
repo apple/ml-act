@@ -1,0 +1,8 @@
+model_task: "text-to-image-generation"
+dataset: "diffusion-prompts"
+src_subsets: ["no_trees"]
+dst_subsets: ["trees"]
+prompt_subset: [none]
+default_evaluation: ['text-to-image-generation']
+dataset_params:
+  json_path: "data/diffusion_prompts.json"

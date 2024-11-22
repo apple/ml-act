@@ -1,0 +1,8 @@
+model_path: openai-community/gpt2
+default_batch_size: 32
+seq_len: 128
+dtype: ${dtype:torch.float32}
+default_module_names:
+  layernorm: ['.+ln_.+']
+  fast: ['.*.0\..+ln_.+']
+  default: ${.layernorm}

@@ -1,0 +1,45 @@
+# For licensing see accompanying LICENSE file.
+# Copyright (C) 2024 Apple Inc. All Rights Reserved.
+
+[project]
+name = "AcT"
+version = "0.0.1"
+description = "A package to intervene internal responses of LLMs and Text-to-Image Diffusion."
+readme = "README.rst"
+authors = [
+    {name="Pau Rodríguez", email="pau.rodriguez@apple.com"},
+    {name="Arno Blaas",  email="ablaas@apple.com"},
+    {name="Xavier Suau",  email="xsuaucuadros@apple.com"},
+]
+license = { text = "Apple Sample Code License" }
+dynamic = ["dependencies"]
+
+# This will fetch dependencies from requirements.txt when running `pip install .`.
+[tool.setuptools.dynamic]
+dependencies = {file = ["requirements.txt"]}
+
+[project.urls]
+homepage = "https://github.com/apple/ml-act"
+
+# Below taken from https://setuptools.pypa.io/en/latest/userguide/pyproject_config.html
+[tool.setuptools.packages.find]
+where = ["."]  # list of folders that contain the packages (["."] by default)
+include = [
+    "datasets",
+    "evaluations",
+    "hooks",
+    "models",
+    "optimal_transport",
+    "scripts",
+    "utils", ]  # package names should match these glob patterns (["*"] by default)
+exclude = ["tests*"]  # exclude packages matching these glob patterns (empty by default)
+namespaces = false  # to disable scanning PEP 420 namespaces (true by default)
+
+[tool.pytest.ini_options]
+pythonpath = [ # Adds code path to pytest
+  "."
+]
+addopts = "--capture=no"  # Don't capture stdout/stderr (default: "auto")
+
+[tool.isort]
+profile = "black"   # Sets isort to use Black-compatible formatting

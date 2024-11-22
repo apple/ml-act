@@ -1,0 +1,10 @@
+name: none
+pooling_op: mean
+incremental: atonce
+state_path: null
+hook_params:
+  intervention_position: all
+  strength: 0.0
+  device: ${device}
+  dtype: ${dtype:torch.float32}
+  quantiles_src: q_all

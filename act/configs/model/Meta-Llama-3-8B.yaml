@@ -1,0 +1,12 @@
+model_path: meta-llama/Meta-Llama-3-8B
+default_batch_size: 32
+seq_len: 128
+dtype: ${dtype:torch.bfloat16}
+default_module_names:
+  icml24:
+    - "model.layers.*.mlp.up_proj"
+    - "model.layers.*.mlp.down_proj"
+    - "model.layers.*.mlp.gate_proj"
+  layernorm: ['.+layernorm']
+  fast: ['model.layers.0.mlp.down_proj']
+  default: ${.icml24}

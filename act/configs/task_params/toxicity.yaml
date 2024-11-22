@@ -1,0 +1,5 @@
+model_task: "text-generation"
+dataset: "jigsaw"
+src_subsets: ["toxic"]
+dst_subsets: ["non-toxic"]
+default_evaluation: ['text-generation', 'model_perplexity', 'mmlu', 'zero_shot', 'rtp']

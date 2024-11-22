@@ -1,0 +1,30 @@
+# For licensing see accompanying LICENSE file.
+# Copyright (C) 2024 Apple Inc. All Rights Reserved.
+
+description: "Learns Incremental Gaussian OT per neuron"
+name: "M-I Incremental Gaussian OT"
+parameters:
+  # Responses args
+  batch_size: 128
+  device: cpu
+  dtype: bfloat16
+  max_batches: 40
+  num_workers: 6
+  pooling_op: [ 'mean' ]
+  resume: 1
+  seed: 42
+  seq_len: 128
+  stop_at_first_hook: 0
+  tag: "test-incremental-responses"
+  model_path: sshleifer/tiny-gpt2
+  module_names: ['.*h.*.mlp.c_proj.*']
+  rand_weights: 0
+  dataset: "jigsaw"
+  src_subset:
+    - toxic
+  dst_subset:
+    - non-toxic
+
+#  intervention_state_path:
+  intervention_name: "gaussian_ot"
+  intervention_tag: "test-incremental-gaussian-ot"

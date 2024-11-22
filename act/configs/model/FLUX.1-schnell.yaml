@@ -1,0 +1,11 @@
+model_path: "black-forest-labs/FLUX.1-schnell"
+default_batch_size: 4
+guidance_scale: 0
+inference_steps: 4
+default_module_names:
+  default: ${.transformer_blocks_12}
+  fast: ["transformer.transformer_blocks.0:0"]
+  transformer_blocks_12: 
+    - "transformer.transformer_blocks.[0-9]+:[0-1]"
+    - "transformer.single_transformer_blocks.[0-9]:0"
+    - "transformer.single_transformer_blocks.11:0"

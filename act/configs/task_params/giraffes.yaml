@@ -1,0 +1,7 @@
+model_task: "text-generation"
+dataset: "json-subsets"
+src_subsets: ["none"]
+dst_subsets: ["giraffe"]
+default_evaluation: ['text-generation']
+dataset_params:
+  json_path: "data/giraffes.json"

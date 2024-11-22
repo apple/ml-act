@@ -1,0 +1,16 @@
+torch
+torchvision
+torchmetrics
+transformers==4.43.4
+diffusers
+blobfile
+datasets
+black
+pre-commit
+scikit-learn
+pandas
+wandb
+numpy<2 # compatibility with hydra-core
+pytest
+lm-eval
+hydra-core

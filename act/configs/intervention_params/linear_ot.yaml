@@ -1,0 +1,10 @@
+name: linear_ot
+pooling_op: mean
+incremental: incr
+state_path: null
+hook_params:
+  intervention_position: all
+  strength: 1.0
+  device: ${device}
+  dtype: ${dtype:torch.float32}
+  quantiles_src: q_0_100

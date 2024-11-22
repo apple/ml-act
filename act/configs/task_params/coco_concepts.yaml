@@ -1,0 +1,6 @@
+model_task: "text-to-image-generation"
+dataset: "coco-captions-concepts"
+src_subsets: ["pink_elephant"]
+dst_subsets: ["none"]
+prompt_subset: ["pink_elephant"]
+default_evaluation: ['text-to-image-generation', 'clip_score']

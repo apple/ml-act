@@ -1,0 +1,24 @@
+# For licensing see accompanying LICENSE file.
+# Copyright (C) 2024 Apple Inc. All Rights Reserved.
+
+description: Jigsaw example
+name: model-interventions
+parameters:
+  batch_size: 16
+  dataset: "jigsaw"
+  device: cpu
+  dtype: float32
+  subset:
+  - toxic
+  - non-toxic
+  max_batches: 1
+  model_path: sshleifer/tiny-gpt2
+  num_workers: 0
+  pooling_op: ['mean']
+  resume: 0
+  seed: 42
+  seq_len: 32
+  stop_at_first_hook: 0
+  tag: "toxicity-responses"
+  module_names: ['.*h.*.mlp.c_proj.*']
+  rand_weights: 0

@@ -1,0 +1,19 @@
+# For licensing see accompanying LICENSE file.
+# Copyright (C) 2024 Apple Inc. All Rights Reserved.
+
+description: Jigsaw example
+name: model-interventions
+parameters:
+  dataset: "jigsaw"
+  src_subset:
+  - toxic
+  dst_subset:
+  - non-toxic
+  num_workers: null
+  pooling_op: ['mean']
+  seed: 42
+  model_path: sshleifer/tiny-gpt2
+  module_names: ['transformer.h.0.mlp.c_proj:0', 'transformer.h.1.mlp.c_proj:0']
+  tag: "toxicity-responses"
+command:
+  python -m scripts.pipeline
